@@ -1,0 +1,39 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws FileNotFoundException {
+        File ArchExperimentos = new File("experimentos.txt");
+        Scanner scannerExp = new Scanner(ArchExperimentos);
+
+        while (scannerExp.hasNextLine()) {
+            String linea = scannerExp.nextLine();
+            String[] partes = linea.split(";");
+            if (partes.length >= 2) {
+                String id = partes[0];
+                String descripcion = partes[1];
+            }
+        }
+        scannerExp.close();
+
+        File ArchMetricas = new File("metricas.txt");
+        Scanner scannerMet = new Scanner(ArchMetricas);
+
+        while (scannerMet.hasNextLine()) {
+            String metricas = scannerMet.nextLine();
+        }
+        scannerMet.close();
+
+        File ArchPredicciones = new File("predicciones.txt");
+        Scanner scannerPred = new Scanner(ArchPredicciones);
+
+        while (scannerPred.hasNextLine()) {
+            String linea = scannerPred.nextLine();
+            String[] partes = linea.split(";");
+            if (partes.length >= 1) {
+                String id = partes[0];
+                int valor1 = Integer.parseInt(partes[1]);
+                int valor2 = Integer.parseInt(partes[2]);
+            }
+        }
